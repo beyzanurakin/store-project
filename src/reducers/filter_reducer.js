@@ -10,6 +10,14 @@ import {
 } from '../actions'
 
 const filter_reducer = (state, action) => {
+  if (action.type === LOAD_PRODUCTS) {
+    return {
+      ...state,
+      //need to copy array not their reference
+      all_products: [...action.payload],
+      filter_products: [...action.payload],
+    }
+  }
   return state
   throw new Error(`No Matching "${action.type}" - action type`)
 }
