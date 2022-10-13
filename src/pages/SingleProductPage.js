@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom'
 const SingleProductPage = () => {
   const { id } = useParams()
   const history = useHistory()
-  console.log(id)
+
   const {
     single_product_loading: loading,
     single_product_error: error,
@@ -27,7 +27,6 @@ const SingleProductPage = () => {
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`)
-    console.log(product)
   }, [id])
 
   //if there is en error back to homepage within 3 seconds
@@ -44,7 +43,6 @@ const SingleProductPage = () => {
   if (error) {
     return <Error />
   }
-  console.log(product)
 
   const {
     name,

@@ -11,11 +11,9 @@ import {
 
 const products_reducer = (state, action) => {
   if (action.type === SIDEBAR_OPEN) {
-    console.log(state)
     return { ...state, isSidebarOpen: true }
   }
   if (action.type === SIDEBAR_CLOSE) {
-    console.log(state)
     return { ...state, isSidebarOpen: false }
   }
   if (action.type === GET_PRODUCTS_BEGIN) {
