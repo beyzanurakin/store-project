@@ -80,7 +80,11 @@ const filter_reducer = (state, action) => {
       })
     }
     /* COMPANY */
-
+    if (company !== 'all') {
+      tempProducts = tempProducts.filter((product) => {
+        return product.company === company
+      })
+    }
     return { ...state, filtered_products: tempProducts }
   }
   //So Complicated you didint understand
